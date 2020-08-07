@@ -16,7 +16,7 @@ def data(n):
  
     while (n>0):
         ret, img = cam.read()
-        frame = cv2.flip(frame, -1)
+        img = cv2.flip(img, -1)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
         faces = face_detector.detectMultiScale(gray, 1.3, 5)
         cv2.putText(img, "scanning, press ESC to stop", (100,100), font, 1, (0,255,255), 2)

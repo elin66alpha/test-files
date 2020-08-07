@@ -3,10 +3,11 @@ import facefollow
 import facetraining
 import faceforpc
 import RPi.GPIO as GPIO
+import time
 x0=90
 y0=90
-servoangle(21, x0)
-servoangle(20, y0)
+
+
 def follow():
     label1['text'] = "wait"
     facefollow.follow(1)
@@ -34,7 +35,7 @@ def servoangle(servo1,servo2,angle1,angle2):
     pwm1.stop()
     pwm2.stop()
     GPIO.cleanup()
-
+servoangle(21,20, x0,y0)
 HEIGHT = 500
 WIDTH = 1000
 root = tk.Tk()
@@ -46,15 +47,15 @@ frame = tk.Frame(root, bg='#FFD77D', bd=5)
 frame.place(relx=0, rely=0, relwidth=1, relheight=1, anchor='nw')
 
 
-button1 = tk.Button(frame, text="LEFT", font=40,command=lambda: servoangle(21,20,x0+10,y0))
+button1 = tk.Button(frame, text="LEFT", font=40,command=lambda: servoangle(21,20,x0=x0+10,y0))
 button1.place(relx=0.3, rely=0.5,relheight=0.2, relwidth=0.2)
 button2 = tk.Button(frame, text="HOME", font=40,command=lambda: servoangle(21,20,90,90))
 button2.place(relx=0.5, rely=0.5,relheight=0.2, relwidth=0.2)
-button3 = tk.Button(frame, text="RIGHT", font=40,command=lambda: servoangle(21,20,x0-10,y0))
+button3 = tk.Button(frame, text="RIGHT", font=40,command=lambda: servoangle(21,20,x0=x0-10,y0))
 button3.place(relx=0.7, rely=0.5,relheight=0.2, relwidth=0.2)
-button4 = tk.Button(frame, text="UP", font=40,command=lambda: servoangle(21,20,x0,y0+10))
+button4 = tk.Button(frame, text="UP", font=40,command=lambda: servoangle(21,20,x0,y0=y0-10))
 button4.place(relx=0.5, rely=0.3,relheight=0.2, relwidth=0.2)
-button5 = tk.Button(frame, text="DOWN", font=40,command=lambda: servoangle(21,20,x0,y0-10))
+button5 = tk.Button(frame, text="DOWN", font=40,command=lambda: servoangle(21,20,x0,y0=y0+10))
 button5.place(relx=0.5, rely=0.7,relheight=0.2, relwidth=0.2)
 
 
