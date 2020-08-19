@@ -27,7 +27,7 @@ def follow(n):
         cv2.imshow('ESC to exit',img)
 
         k = cv2.waitKey(30) & 0xff
-        if k == 27: # press 'ESC' to quit
+        if k == 9: # press 'ESC' to quit
             break
     cap.release()
     cv2.destroyAllWindows()
