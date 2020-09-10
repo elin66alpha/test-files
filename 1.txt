@@ -1,0 +1,24 @@
+  if (zAxis>0)
+  { int zmapw;
+    zmapw = map(zAxis,0,1023,0,180);
+    myservo1.write(zmapw);
+    int tmapw;
+    tmapw = map(zAxis,0,1023,0,180);
+    myservo2.write(tmapw);
+ 
+ 
+      }
+  
+  else
+  {
+    myservo1.write(0);
+      myservo2.write(0);
+    }
+ 
+ You have signed up for the Intel® Distribution of OpenVINO™ toolkit for Linux*. You will receive an email with the serial number listed below and the download location for future reference.
+
+Serial number : CCBP-SB32LFSM
+
+    Save this serial number. You may need it to activate your product in the installer.For your reference, you will receive an email that includes your serial number and download instructions.
+
+
